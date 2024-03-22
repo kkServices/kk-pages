@@ -1,5 +1,5 @@
 # update rules every day
-name: Deploy Production
+name: Deploy
 
 on:
   workflow_dispatch:
