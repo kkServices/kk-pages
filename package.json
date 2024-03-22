@@ -1,29 +1,37 @@
 {
-  "name": "kkproject",
+  "name": "kk-service-pages",
   "type": "module",
   "private": true,
   "packageManager": "pnpm@8.15.5",
   "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint-staged": "lint-staged",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
-    "up": "taze major -I",
-    "build:turbo": "turbo build",
-    "build:dev": "turbo dev"
+    "up": "taze major -I"
   },
   "dependencies": {
-    "@kkproject/business": "workspace:^",
-    "@kkproject/fetch": "workspace:^",
-    "@kkproject/utils": "workspace:^",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-tabs": "^1.0.4",
     "@svgr/plugin-jsx": "^8.1.0",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "consola": "^3.2.3",
     "next": "14.1.0",
+    "next-themes": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwind-merge": "^2.2.2"
+    "tailwind-merge": "^2.2.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.8.3",
@@ -34,8 +42,6 @@
     "@iconify/react": "^4.1.1",
     "@iconify/tailwind": "^0.1.4",
     "@iconify/types": "^2.0.0",
-    "@kkproject/configs": "workspace:^",
-    "@kkproject/types": "workspace:^",
     "@svgr/core": "^8.1.0",
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.67",
@@ -58,7 +64,6 @@
     "sass": "^1.72.0",
     "tailwindcss": "^3.4.1",
     "taze": "^0.13.3",
-    "turbo": "^1.12.5",
     "typescript": "^5.4.2",
     "unplugin-icons": "^0.18.5"
   },
