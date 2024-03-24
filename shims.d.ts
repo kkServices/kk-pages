@@ -6,3 +6,8 @@ declare module '*.sass' {
   const css: string
   export default css
 }
+
+declare module '*.yml' {
+  const content: any
+  export default content
+}

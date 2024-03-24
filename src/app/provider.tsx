@@ -1,3 +1,4 @@
+import { ConfigProvider } from 'antd'
 import { ThemeProvider } from 'next-themes'
 
 export default function Provider({ children }: { children: React.ReactNode }) {
@@ -6,7 +7,9 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       <ThemeProvider
         defaultTheme="system"
       >
-        {children}
+        <ConfigProvider theme={{ cssVar: true }}>
+          {children}
+        </ConfigProvider>
       </ThemeProvider>
     </>
   )

@@ -1,0 +1,14 @@
+@layer base {
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-default {
+    scrollbar-width: auto;
+  }
+  .scrollbar-default::-webkit-scrollbar {
+    display: block;
+  }
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/style/index.scss'
+import { AntdRegistry } from '@ant-design/nextjs-registry'
 import Provider from './provider'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,7 +20,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Provider>
-          {children}
+          <AntdRegistry>
+            {children}
+          </AntdRegistry>
         </Provider>
       </body>
     </html>
