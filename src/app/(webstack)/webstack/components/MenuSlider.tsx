@@ -1,7 +1,7 @@
 'use client'
 
 import type { MenuProps } from 'antd'
-import { Button, ConfigProvider, Menu } from 'antd'
+import { ConfigProvider, Menu } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
 import { useMedia } from 'react-use'
 
