@@ -30,8 +30,8 @@ export function LinkCard({ title, description, image, url }: LinkCardProps) {
               <img src={image} className="size-10 " alt="" />
             </LazyLoad>
 
-            <div className="ml-3 text-xs">
-              <p className="line-clamp-1 text-left">
+            <div className="ml-3 flex-1 text-left text-xs">
+              <p className="line-clamp-1">
                 <strong>{title}</strong>
               </p>
               <p className="line-clamp-2 break-all">{description}</p>

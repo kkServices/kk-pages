@@ -2,7 +2,7 @@
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
-export default function SwitchMode() {
+export function SwitchMode() {
   const { setTheme, systemTheme, theme } = useTheme()
   const [mounted, setMounted] = useState(false)
 

@@ -1,23 +1,20 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import type { MenuProps } from 'antd'
-import styles from './theme.module.css'
+import { Icon } from '@iconify/react'
 import dataYml from './data.yml'
-import MenuSlider from './components/MenuSlider'
 import { ToggleSlider } from './components/ToggleSlider'
-import SwitchMode from './components/SwitchMode'
+import { SwitchMode } from './components/SwitchMode'
 import { LinkCard } from './components/LinkCard'
-import { cn } from '@/lib/utils'
-import '@fortawesome/fontawesome-free/css/all.css'
+import { Aside } from './components/Aside'
 
 type MenuItem = Required<MenuProps>['items'][number]
-
 const data: WebStack.Data[] = dataYml
 const menuList: MenuItem[] = data.map((item) => {
   return {
     label: item.taxonomy,
     key: item.taxonomy,
-    icon: <i className={item.icon}></i>,
+    icon: <Icon icon={item.icon} />,
     children: item.list?.map((list) => {
       return {
         label: list.term,
@@ -36,7 +33,7 @@ function renderLinkCard(linkArray: WebStack.Link[]) {
             key={index + link.url}
             title={link.title}
             description={link.description}
-            image={`https://static.bioitee.com/webstack/logos/${link.logo}`}
+            image={link.logo}
             url={link.url}
           />
         )
@@ -96,21 +93,19 @@ function renderContent() {
 const RenderContentMemo = React.memo(renderContent)
 
 export default function Page() {
-  const [collapsed, setCollapsed] = useState(false)
-
+  const asideRef = React.useRef<{ toggle: () => void }>(null)
   return (
-    <div className={cn('block  flex-col md:flex-row md:flex', styles.webstackTheme)}>
-      <MenuSlider collapsed={collapsed} menu={menuList} setCollapsed={setCollapsed} />
+    <div className="webstack-theme block h-full md:flex">
+      <Aside ref={asideRef} menu={menuList} />
 
-      <div className="flex-1 overflow-auto">
+      <div className="box-border h-32 w-full ">
         <div className="hidden h-16 w-full bg-[var(--background-color)] md:flex">
           <ToggleSlider onClick={() => {
-            setCollapsed(!collapsed)
+            asideRef.current?.toggle()
           }}
           />
           <SwitchMode />
         </div>
-
         <RenderContentMemo />
       </div>
     </div>

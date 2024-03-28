@@ -11,6 +11,8 @@ export default antfu(
     formatters: true,
     ignores: [
       'src/components/ui/**',
+      'src/components/test/**',
+      'src/app/test/**',
     ],
   },
   {
