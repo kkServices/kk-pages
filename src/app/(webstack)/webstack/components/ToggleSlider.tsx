@@ -5,7 +5,7 @@ export function ToggleSlider({ onClick }: { onClick: () => void }) {
         onClick()
         // setOpen(!open)
       }}
-      className="flex size-16 cursor-pointer items-center justify-center border-t-primary hover:border-t"
+      className="flex size-16 cursor-pointer items-center justify-center border-t border-t-transparent hover:border-t-primary"
     >
       <span className="icon-[fa6-solid--align-justify]"></span>
     </div>
