@@ -9,6 +9,9 @@ export default antfu(
     react: true,
     unocss: false,
     formatters: true,
+    ignores: [
+      'src/components/ui/**',
+    ],
   },
   {
     rules: {
