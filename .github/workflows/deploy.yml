@@ -44,7 +44,9 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run:
+          rm -rf src/app/test
+          pnpm install --no-frozen-lockfile
 
       - name: Deploy to Vercel
         run: pnpx vercel --token ${VERCEL_TOKEN} ${{ steps.extract_branch.outputs.branch == 'master' && '--prod' || '' }}
