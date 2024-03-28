@@ -2,6 +2,7 @@
 import { useMeasure } from 'react-use'
 import React from 'react'
 import LazyLoad from 'react-lazy-load'
+import Link from 'next/link'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
 interface LinkCardProps {
@@ -13,14 +14,16 @@ interface LinkCardProps {
 export function LinkCard({ title, description, image, url }: LinkCardProps) {
   const [ref, { width }] = useMeasure()
   function onClick(e: MouseEvent) {
-    e.preventDefault()
-    window.open(url)
+    if (url.startsWith('http')) {
+      e.preventDefault()
+      window.open(url)
+    }
   }
   return (
     <TooltipProvider delayDuration={100}>
       <Tooltip>
         <TooltipTrigger>
-          <a
+          <Link
             onClick={onClick as unknown as any}
             href={url}
             ref={ref as unknown as any}
@@ -36,14 +39,14 @@ export function LinkCard({ title, description, image, url }: LinkCardProps) {
               </p>
               <p className="line-clamp-2 break-all">{description}</p>
             </div>
-          </a>
+          </Link>
         </TooltipTrigger>
         <TooltipContent
           className="bg-black"
           style={{ maxWidth: width }}
           side="bottom"
         >
-          <p className="break-all text-white">{url}</p>
+          <p className="break-all text-white">{description}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

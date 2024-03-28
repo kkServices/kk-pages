@@ -1,3 +1,16 @@
+- taxonomy: 外部链接
+  icon: fa6-solid:link
+  links:
+    - title: 文档收集
+      url: /webstack/doc
+      logo: https://file3.acs.pw/image/2/2022/05/03/627006b73efab.png
+      description: 文档相关
+
+    - title: 活动入口
+      url: /webstack/activity
+      logo: https://file2.antmoe.com/image/2/2022/07/30/62e505f918ca7.png
+      description: 一些常用活动的入口
+
 - taxonomy: 常用推荐
   icon: fa6-regular:star
   links:
@@ -275,6 +288,7 @@
           description: R 语言可视化案例网站。
         - title: Python Graph Gallery
           logo: https://cdn.jsdelivr.net/gh/shenweiyan/ShenHub/webstack/logos/R_single_medium.png
+          url: https://python-graph-gallery.com/
           description: Python 言可视化案例网站。
         - title: OmicShare Tools
           logo: https://cdn.jsdelivr.net/gh/shenweiyan/ShenHub/webstack/logos/基迪奥.jpg
@@ -835,7 +849,7 @@
           description: 家庭云|网盘|文件备份|资源分享。
         - title: 坚果云
           logo: https://cdn.jsdelivr.net/gh/shenweiyan/ShenHub/webstack/logos/坚果云.png
-          usrl: https://www.jianguoyun.com/
+          url: https://www.jianguoyun.com/
           description: 坚果云官网。
     - term: 图标素材
       links:

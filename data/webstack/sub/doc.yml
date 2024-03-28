@@ -1,0 +1,78 @@
+- taxonomy: 书籍
+  icon: fa6-regular:star
+  links:
+    - title: ES6 入门教程
+      logo: https://es6.ruanyifeng.com/favicon.ico
+      url: https://es6.ruanyifeng.com/
+      description: 《ECMAScript 6 入门教程》是一本开源的 JavaScript 语言教程，全面介绍 ECMAScript 6 新引入的语法特性
+
+    - title: Pug 模板引擎中文文档
+      logo: https://www.pugjs.cn/images/apple-touch-icon.png
+      url: https://www.pugjs.cn/api/getting-started.html
+      description: Pug 是一款健壮、灵活、功能丰富的模板引擎，专门为 Node.js 平台开发。Pug 是由 Jade 改名而来。
+
+    - title: npm 中文文档
+      logo: https://www.npmjs.cn/images/favicon.ico
+      url: https://www.npmjs.cn/
+      description: npm 是 JavaScript 世界的包管理工具，并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码，管理项目依赖关系。
+
+    - title: webpack
+      logo: https://www.webpackjs.com/assets/favicon.ico
+      url: https://www.webpackjs.com/concepts/
+      description: webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)
+
+    - title: mongoosejs
+      logo: https://besticon.herokuapp.com/lettericons/M-120.png
+      url: http://mongoosejs.net/
+      description: 让我们面对这样的困境, 编写MongoDB验证，转换和业务逻辑是非常麻烦的. 所以我们发明了Mongoose.
+
+    - title: APIDOC
+      logo: https://apidocjs.com/logo/favicon.ico
+      url: https://apidocjs.com/
+      description: Inline Documentation for RESTful web APIs
+
+    - title: BetterScrll 2 中文文档
+      logo: https://dpubstatic.udache.com/static/dpublogo/t_L6vAgQ-E/logo.svg
+      url: https://better-scroll.github.io/docs/zh-CN/
+      description: 为移动端（已支持 PC）各种滚动场景提供丝滑的滚动效果。
+
+    - title: pnpm中文文档
+      logo: https://pnpm.io/logo/favicon.png
+      url: https://pnpm.io/zh/motivation
+      description: 快速的，节省磁盘空间的包管理工具
+
+    - title: CSS参考-MDN
+      logo: https://ae01.alicdn.com/kf/Hd33626da4cac472d99e150ae80ac2ff4q.png
+      url: https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference
+      description: 快速进入MDN的CSS参考手册
+
+    - title: Web API参考-MDN
+      logo: https://ae01.alicdn.com/kf/Hd33626da4cac472d99e150ae80ac2ff4q.png
+      url: https://developer.mozilla.org/zh-CN/docs/Web/API
+      description: 快速进入MDN的Web API参考
+
+    - title: 事件参考-MDN
+      logo: https://ae01.alicdn.com/kf/Hd33626da4cac472d99e150ae80ac2ff4q.png
+      url: https://developer.mozilla.org/zh-CN/docs/Web/Events
+      description: 快速进入MDN的事件参考
+
+    - title: Git book
+      logo: https://git-scm.com/images/logo@2x.png
+      url: https://git-scm.com/book/zh/
+      description: 官方Git教程
+
+    - title: Actions参考手册
+      logo: https://docs.github.com/apple-touch-icon.png
+      url: https://docs.github.com/cn/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions
+      description: Actions参考手册
+- taxonomy: 查询
+  icon: fa6-regular:search
+  links:
+    - title: Can I use
+      logo: https://ae01.alicdn.com/kf/H21eee713a2274f1596f73d434f76ad4aw.png
+      url: https://caniuse.com/
+      description: Can I use... Support tables for HTML5, CSS3, etc
+    - title: flex布局可视化
+      logo: https://file.acs.pw/picGo/2021/2/5/5b55fe91252871454045f46140357dda.jpg
+      url: https://bigerfe.com/yflex
+      description: 可视化的方式看flex布局的样式
