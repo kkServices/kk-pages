@@ -38,7 +38,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build Docker image
-        run:
+        run: ｜
           docker image build -t kkpages .
           docker login -u ${ALIYUN_DOCKER_USERNAME} -p ${ALIYUN_DOCKER_PASSWORD} registry.cn-beijing.aliyuncs.com
           docker tag kkpages registry.cn-beijing.aliyuncs.com/xk-repo/kkpages:latest
