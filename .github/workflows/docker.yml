@@ -1,22 +1,16 @@
-name: Deploy
+name: Build Docker Image
 
 on:
   workflow_dispatch:
   push:
-    branches: [master, develop]
-  pull_request:
-    branches: [master, develop]
+    tags:
+      - v*
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@master
-
-      - name: Extract branch name
-        shell: bash
-        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-        id: extract_branch
 
       - name: Setup node
         uses: actions/setup-node@master
@@ -45,12 +39,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Deploy to Vercel
-        run: pnpx vercel --token ${VERCEL_TOKEN} ${{ steps.extract_branch.outputs.branch == 'master' && '--prod' || '' }}
+      - name: Build Docker image
+        run:
+          docker image build -t kkpages .
+          docker login --username=${ALIYUN_DOCKER_USER} --password=${ALIYUN_DOCKER_PASSWORD} registry.cn-beijing.aliyuncs.com
+          docker tag kkpages registry.cn-beijing.aliyuncs.com/xk-repo/kkpages:latest
+          docker push registry.cn-beijing.aliyuncs.com/xk-repo/kkpages:latest
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          ALIYUN_DOCKER_USERNAME: ${{ secrets.ALIYUN_DOCKER_USERNAME }}
+          ALIYUN_DOCKER_PASSWORD: ${{ secrets.ALIYUN_DOCKER_PASSWORD }}
 
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
