@@ -2,9 +2,7 @@ name: Build Docker Image
 
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - v*
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -42,7 +40,7 @@ jobs:
       - name: Build Docker image
         run:
           docker image build -t kkpages .
-          docker login --username=${ALIYUN_DOCKER_USER} --password=${ALIYUN_DOCKER_PASSWORD} registry.cn-beijing.aliyuncs.com
+          docker login --username ${ALIYUN_DOCKER_USERNAME} --password ${ALIYUN_DOCKER_PASSWORD} registry.cn-beijing.aliyuncs.com
           docker tag kkpages registry.cn-beijing.aliyuncs.com/xk-repo/kkpages:latest
           docker push registry.cn-beijing.aliyuncs.com/xk-repo/kkpages:latest
         env:
