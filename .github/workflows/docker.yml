@@ -12,10 +12,10 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker image build -t kkpages .
+          docker image build -t kk-pages .
           docker login -u ${ALIYUN_DOCKER_USERNAME} -p ${ALIYUN_DOCKER_PASSWORD} registry.cn-beijing.aliyuncs.com
-          docker tag kkpages registry.cn-beijing.aliyuncs.com/xk-repo/kkpages:latest
-          docker push registry.cn-beijing.aliyuncs.com/xk-repo/kkpages:latest
+          docker tag kk-pages registry.cn-beijing.aliyuncs.com/xk-repo/kk-pages:latest
+          docker push registry.cn-beijing.aliyuncs.com/xk-repo/kk-pages:latest
         env:
           ALIYUN_DOCKER_USERNAME: ${{ secrets.ALIYUN_DOCKER_USERNAME }}
           ALIYUN_DOCKER_PASSWORD: ${{ secrets.ALIYUN_DOCKER_PASSWORD }}
