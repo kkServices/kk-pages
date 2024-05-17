@@ -53,6 +53,9 @@ importers:
       '@svgr/plugin-jsx':
         specifier: ^8.1.0
         version: 8.1.0(@svgr/core@8.1.0)
+      alova:
+        specifier: ^2.19.1
+        version: 2.19.1
       antd:
         specifier: ^5.15.4
         version: 5.15.4(react-dom@18.2.0)(react@18.2.0)
@@ -3485,6 +3488,11 @@ packages:
       require-from-string: 2.0.2
       uri-js: 4.4.1
     dev: true
+
+  /alova@2.19.1:
+    resolution: {integrity: sha512-u6oj9hA5hWZcmVk4lXaAQifrCHflBfk9Y9y/YGUPRJNk1J1eUT4Xr57Ui9Xmjzf0NCWoZyREI7faPDWIpQjdow==}
+    engines: {node: '>= 0.12.0'}
+    dev: false
 
   /ansi-escapes@6.2.0:
     resolution: {integrity: sha512-kzRaCqXnpzWs+3z5ABPQiVke+iq0KXkHo8xiWV4RPTi5Yli0l97BEQuhXV1s7+aSU/fu1kUuxgS4MsQ0fRuygw==}

@@ -30,6 +30,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-spring/web": "^9.7.3",
     "@svgr/plugin-jsx": "^8.1.0",
+    "alova": "^2.19.1",
     "antd": "^5.15.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
