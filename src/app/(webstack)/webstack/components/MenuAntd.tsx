@@ -21,7 +21,6 @@ export function MenuAntd(props: MenuAntdProps) {
   }
 
   function onSelect(props: { key: string }) {
-    // eslint-disable-next-line react/prop-types
     const element = document.getElementById(props.key)
     if (element)
       element.scrollIntoView({ behavior: 'smooth' })

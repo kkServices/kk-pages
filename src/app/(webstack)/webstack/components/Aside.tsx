@@ -2,21 +2,21 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react'
 // import { MenuRC } from './MenuRC'
 import type { MenuProps } from 'antd'
-import { MenuAntd } from './MenuAntd'
 import { ToggleSlider } from './ToggleSlider'
 import { SwitchMode } from './SwitchMode'
 import { cn } from '@/lib/utils'
 import { useBreakpoint } from '@/hooks/useBreakpoint'
+import { MenuAntd } from '@/app/(webstack)/webstack/components/MenuAntd'
 
 const LARGE_SIZE = 256
 const SMALL_SIZE = 64
 type MenuItem = Required<MenuProps>['items'][number]
 interface AsideProps {
   menu: MenuItem[]
+  children?: React.ReactNode
   ref?: React.Ref<{ toggle: () => void }>
 }
 
-// eslint-disable-next-line react/display-name
 export const Aside = forwardRef((props: AsideProps, ref) => {
   const [showMenu, setShowMenu] = useState<boolean>(true)
   const [collapsed, setCollapsed] = useState<boolean>(false)
@@ -34,15 +34,10 @@ export const Aside = forwardRef((props: AsideProps, ref) => {
     setShowMenu(!showMenu)
   }
 
-  function showMenuComputed() {
-    if (breakpoint === 'SM')
-      return showMenu
-    else
-      return true
-  }
   useImperativeHandle(ref, () => ({
     toggle: () => setCollapsed(!collapsed),
   }))
+
   return (
     <>
       <PlaceholderElement size={size} />
@@ -59,7 +54,7 @@ export const Aside = forwardRef((props: AsideProps, ref) => {
           <MenuAntd
             inlineCollapsed={breakpoint === 'SM' ? false : collapsed}
             menu={props.menu}
-            className={cn(showMenuComputed() ? 'block' : 'hidden')}
+            className={cn((breakpoint === 'SM' ? showMenu : true) ? 'block' : 'hidden')}
           />
 
           {/* <MenuRC inlineCollapsed={collapsed} /> */}
@@ -94,6 +89,7 @@ function PlaceholderElement(props: PlaceholderElementProps) {
 interface LogoProps {
   collapsed: boolean
 }
+
 function Logo(props: LogoProps) {
   const { collapsed } = props
   return (
@@ -122,24 +118,6 @@ function Logo(props: LogoProps) {
     </>
   )
 }
-
-// interface TriggerProps {
-//   size: number
-//   collapsed: boolean
-//   toggle: () => void
-// }
-
-// function Trigger(props: TriggerProps) {
-//   // const size = props.size
-//   return (
-//     <div
-//       className="absolute -right-3 top-4 flex size-6 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white"
-//       onClick={props.toggle}
-//     >
-//       <span className="icon-[mingcute--right-fill] size-3 rounded-full bg-black"></span>
-//     </div>
-//   )
-// }
 
 interface TitleProps {
   collapsed: boolean
