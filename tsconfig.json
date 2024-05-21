@@ -7,7 +7,8 @@
     "moduleResolution": "bundler",
     "paths": {
       "@/*": ["./src/*"],
-      "@data/*": ["./data/*"]
+      "@data/*": ["./data/*"],
+      "@shadcn/*": ["./src/components/ui/*"]
     },
     "resolveJsonModule": true,
     "types": [],

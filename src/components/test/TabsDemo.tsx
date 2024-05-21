@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@shadcn/button'
 import {
   Card,
   CardContent,
@@ -6,15 +6,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+} from '@shadcn/card'
+import { Input } from '@shadcn/input'
+import { Label } from '@shadcn/label'
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from '@/components/ui/tabs'
+} from '@shadcn/tabs'
 
 export function TabsDemo() {
   return (

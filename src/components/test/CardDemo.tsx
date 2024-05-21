@@ -1,7 +1,7 @@
 import { BellIcon, CheckIcon } from '@radix-ui/react-icons'
 
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
+import { Button } from '@shadcn/button'
 import {
   Card,
   CardContent,
@@ -9,8 +9,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import { Switch } from '@/components/ui/switch'
+} from '@shadcn/card'
+import { Switch } from '@shadcn/switch'
 
 const notifications = [
   {
