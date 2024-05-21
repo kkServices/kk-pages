@@ -1,4 +1,5 @@
 import React from 'react'
+import Icon from '@/components/kUi/icon'
 
 interface PageProps {
 
@@ -6,11 +7,11 @@ interface PageProps {
 const Page: React.FC<PageProps> = () => {
   return (
     <div className="mx-auto max-w-[1440px]">
-      <div className="card  mt-4 ">
-        <i className="icon-[material-symbols--10k-rounded] align-middle text-3xl"></i>
-        <i className="icon-[line-md--github] align-middle text-3xl"></i>
-        <i className="icon-[line-md--loading-loop] align-middle text-3xl"></i>
-        <i className="icon-[flag--cn-4x3] align-middle text-3xl"></i>
+      <div className="card  mt-4">
+        <Icon icon="icon-[material-symbols--10k-rounded]" className="text-2xl text-red " />
+        <Icon icon="icon-[line-md--github]" className="text-2xl" />
+        <Icon icon="icon-[flag--cn-4x3]" className="text-2xl" />
+        <Icon icon="icon-[line-md--loading-loop]" className="text-2xl" />
       </div>
     </div>
   )

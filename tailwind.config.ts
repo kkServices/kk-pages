@@ -1,7 +1,8 @@
 import { addDynamicIconSelectors } from '@iconify/tailwind'
-// import { tailwindcssAnimate } from 'tailwindcss-animate'
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss'
+import tailwindcssAnimate from 'tailwindcss-animate'
+
+const config: Config = {
   darkMode: [],
   content: [
     './src/app/**/*.{ts,tsx}',
@@ -51,6 +52,7 @@ module.exports = {
           DEFAULT: 'var(--card)',
           foreground: 'var(--card-foreground)',
         },
+        red: 'var(--k-red)',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -79,5 +81,6 @@ module.exports = {
       },
     },
   },
-  plugins: [addDynamicIconSelectors(), require('tailwindcss-animate')],
+  plugins: [addDynamicIconSelectors(), tailwindcssAnimate],
 }
+export default config
