@@ -37,6 +37,7 @@ export function StyleProvider(StyleProvider: StyleProviderProps) {
 
   return (
     <>
+      {/* eslint-disable-next-line react/prefer-destructuring-assignment */}
       {StyleProvider.children}
     </>
   )

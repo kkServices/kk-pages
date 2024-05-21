@@ -1,28 +1,34 @@
-import { createAlova } from 'alova'
+'use client'
 import GlobalFetch from 'alova/GlobalFetch'
+import type { AlovaMeta } from '@/services/mock/alova.request'
+import { WarpAlova } from '@/services/mock/alova.request'
 
-export const request = createAlova({
+export const requestClient = new WarpAlova({
   requestAdapter: GlobalFetch(),
-
-  beforeRequest(_method) {
-
+  localCache: null,
+  beforeRequest(method) {
+    // const meta = method.meta as AlovaMeta
+    // console.log(meta)
+    method.config.cache = 'no-cache'
   },
   responded: {
     // 请求成功的拦截器
     // 当使用GlobalFetch请求适配器时，第一个参数接收Response对象
     // 第二个参数为当前请求的method实例，你可以用它同步请求前后的配置信息
-    onSuccess: async (response, _method) => {
+    onSuccess: async (response, method) => {
       if (response.status >= 400)
         throw new Error(response.statusText)
-
-      const json = await response.json()
-      if (json.code !== 200) {
+      const meta = method.meta as AlovaMeta
+      const data = await response.json()
+      if (!meta.isTransformResponse)
+        return data
+      if (!data.success) {
         // 抛出错误或返回reject状态的Promise实例时，此请求将抛出错误
-        throw new Error(json.message)
+        throw await Promise.reject(data.errMessage)
       }
 
       // 解析的响应数据将传给method实例的transformData钩子函数，这些函数将在后续讲解
-      return json.data
+      return data.data
     },
 
     // 请求失败的拦截器
@@ -39,4 +45,5 @@ export const request = createAlova({
       // 处理请求完成逻辑
     },
   },
+
 })

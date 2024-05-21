@@ -74,6 +74,9 @@ module.exports = {
       transitionTimingFunction: {
         'in-out': 'ease-in-out',
       },
+      flex: {
+        2: '2 2 0%',
+      },
     },
   },
   plugins: [addDynamicIconSelectors(), require('tailwindcss-animate')],
