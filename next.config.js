@@ -4,6 +4,9 @@ import Icons from 'unplugin-icons/webpack'
 export default {
   output: 'standalone',
   reactStrictMode: true,
+  experimental: {
+    swcMinify: true,
+  },
   webpack(config) {
     config.plugins.push(
       Icons({
