@@ -10,7 +10,7 @@ interface MenuAntdProps {
 }
 export function MenuAntd(props: MenuAntdProps) {
   const { menu, inlineCollapsed, className } = props
-  const rootSubmenuKeys = useMemo(() => props.menu.filter(item => item?.key).map(item => item?.key), [props.menu])
+  const rootSubmenuKeys = useMemo(() => menu.filter(item => item?.key).map(item => item?.key), [menu])
   const [openKeys, setOpenKeys] = useState<any[]>([])
   const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
     const latestOpenKey = keys.find(key => !openKeys.includes(key))
@@ -21,7 +21,8 @@ export function MenuAntd(props: MenuAntdProps) {
   }
 
   function onSelect(props: { key: string }) {
-    const element = document.getElementById(props.key)
+    const { key } = props
+    const element = document.getElementById(key)
     if (element)
       element.scrollIntoView({ behavior: 'smooth' })
   }

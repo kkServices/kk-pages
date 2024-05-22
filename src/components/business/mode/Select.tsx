@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@shadcn/dropdown-menu'
 
-export function ModeToggle() {
+export function ModeSelect() {
   const [mounted, setMounted] = useState(false)
   const { setTheme } = useTheme()
 

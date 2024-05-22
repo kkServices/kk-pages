@@ -13,10 +13,10 @@ type MenuItem = Required<MenuProps>['items'][number]
 function renderLinkCard(linkArray: WebStack.Link[]) {
   return (
     <div className="mt-2 grid grid-cols-1 gap-4 px-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-      {linkArray.map((link, index) => {
+      {linkArray.map((link) => {
         return (
           <LinkCard
-            key={index + link.url}
+            key={link.url}
             title={link.title}
             description={link.description}
             image={link.logo}
@@ -81,8 +81,9 @@ function renderContent(props: { data: WebStack.Data[] }) {
 const RenderContentMemo = React.memo(renderContent)
 
 export default function Page(props: { data: WebStack.Data[] }) {
+  const { data } = props
   const asideRef = React.useRef<{ toggle: () => void }>(null)
-  const menuList: MenuItem[] = props.data.map((item) => {
+  const menuList: MenuItem[] = data.map((item) => {
     return {
       label: item.taxonomy,
       key: item.taxonomy,
@@ -107,7 +108,7 @@ export default function Page(props: { data: WebStack.Data[] }) {
           />
           <SwitchMode />
         </div>
-        <RenderContentMemo data={props.data} />
+        <RenderContentMemo data={data} />
       </div>
     </div>
   )

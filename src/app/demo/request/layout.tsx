@@ -7,7 +7,7 @@ interface LayoutProps {
 }
 export default function Layout({ children, server, client }: Readonly<LayoutProps>) {
   return (
-    <div className="mx-auto flex max-w-[1440px] pt-8 gap-4">
+    <div className="mx-auto flex max-w-[1440px] gap-4 pt-8">
       <div className="flex-auto">{children}</div>
       <div className="flex flex-2 flex-col gap-4">
         {server}

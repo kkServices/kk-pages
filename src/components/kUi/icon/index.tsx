@@ -10,9 +10,9 @@ interface IconProps {
   className?: string
 }
 const Icon: React.FC<IconProps> = (props: IconProps) => {
-  const className = cn(['align-middle', props.icon], props.className)
+  const { icon, className } = props
 
-  return <i className={className} />
+  return <i className={cn(['align-middle', icon], className)} />
 }
 
 export default Icon

@@ -15,7 +15,8 @@ export function createMozStore<ObservableState, P = void>(useHook: Hook<Observab
   const Context = createContext<ObservableState | null>(null)
 
   const Provider = (props: ProviderProps) => {
-    return <Context.Provider value={useHook(params)}>{props.children}</Context.Provider>
+    const { children } = props
+    return <Context.Provider value={useHook(params)}>{children}</Context.Provider>
   }
 
   function useStore(): ObservableState {
