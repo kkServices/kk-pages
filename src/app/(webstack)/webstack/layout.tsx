@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { StyleProvider } from './Provider/Style'
+import { StyleProvider } from './provider/Style'
 
 export const metadata: Metadata = {
   title: {

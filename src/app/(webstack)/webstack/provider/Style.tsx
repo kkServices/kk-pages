@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 
 interface StyleProviderProps {
