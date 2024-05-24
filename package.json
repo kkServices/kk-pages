@@ -33,6 +33,7 @@
     "@tanstack/react-query-next-experimental": "^5.37.1",
     "alova": "^2.20.5",
     "antd": "^5.17.3",
+    "await-to-js": "^3.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "jotai": "^2.8.0",
@@ -46,6 +47,8 @@
     "react-use": "^17.5.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0",
     "yaml": "^2.4.2"
   },
   "devDependencies": {

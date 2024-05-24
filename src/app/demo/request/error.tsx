@@ -1,20 +1,18 @@
-'use client' // Error components must be Client Components
+'use client'
 
-import { startTransition, useEffect } from 'react'
+import { startTransition } from 'react'
 import { useRouter } from 'next/navigation'
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string }
+interface PageError extends Error {
+  digest?: string
+}
+interface ErrorProps {
+  error: PageError
   reset: () => void
-}) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error)
-  }, [error])
 
+}
+
+export default function Error({ error, reset }: ErrorProps) {
   const router = useRouter()
   const reload = () => {
     startTransition(() => {
@@ -25,12 +23,10 @@ export default function Error({
 
   return (
     <div>
-      <h2>Something went wrong!</h2>
-      <button
-        type="button"
-        className="btn"
-        onClick={() => reload()}
-      >
+      <h2>
+        {`${`${error} Something went wrong!`}`}
+      </h2>
+      <button type="button" className="btn" onClick={() => reload()}>
         Try again
       </button>
     </div>
