@@ -4,6 +4,7 @@ import { getExampleProfile } from '@/services/mock/api.server'
 import { BusinessError } from '@/components/business/error'
 import type { BusinessException } from '@/services/mock/request.serve'
 
+export const dynamic = 'force-dynamic'
 interface MockRequestProps {
 
 }
