@@ -3,6 +3,7 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { Button } from 'antd'
 import { getHitokoto } from '@/services/mock/api.client'
+import { cn } from '@/lib/utils'
 
 interface PageProps {}
 const Page: React.FC<PageProps> = () => {
@@ -15,8 +16,8 @@ const Page: React.FC<PageProps> = () => {
   })
   return (
     <div className="rounded-xl bg-white p-2 text-center shadow transition hover:cursor-pointer hover:shadow-xl">
-      {isLoading || isRefetching ? <div>loading...</div> : <p>{data?.hitokoto}</p>}
-      <Button loading={isLoading} onClick={() => refetch()}>refetch</Button>
+      {!data ? <div>loading...</div> : <p className={cn(isLoading || isRefetching ? 'opacity-80' : '', 'transition duration-500')}>{data?.hitokoto}</p>}
+      <Button loading={isLoading || isRefetching} onClick={() => refetch()}>refetch</Button>
     </div>
   )
 }

@@ -1,7 +1,6 @@
 'use client'
 import GlobalFetch from 'alova/GlobalFetch'
-import type { AlovaMeta } from '@/services/mock/alova.request'
-import { WarpAlova } from '@/services/mock/alova.request'
+import { WarpAlova } from './alova.request'
 
 export const requestClient = new WarpAlova({
   requestAdapter: GlobalFetch(),
@@ -18,7 +17,7 @@ export const requestClient = new WarpAlova({
     onSuccess: async (response, method) => {
       if (response.status >= 400)
         throw new Error(response.statusText)
-      const meta = method.meta as AlovaMeta
+      const meta = method.meta as Service.Meta
       const data = await response.json()
       if (!meta.isTransformResponse)
         return data

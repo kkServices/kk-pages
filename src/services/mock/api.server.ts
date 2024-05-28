@@ -1,12 +1,7 @@
-import { requestServer } from './request.serve'
+import { requestServer } from '@/services/alova/request.serve'
 
 export function getExampleProfile(commonId: string, goodsId?: string | null) {
   const body = { goodsId, commonId }
 
-  return requestServer.fetch<{ username: string }>('/example/profile', {
-    body,
-    cache: 'no-cache',
-    method: 'post',
-    // next: { revalidate: 10},
-  })
+  return requestServer.Post('/example/profile', body)
 }
