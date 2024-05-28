@@ -7,7 +7,6 @@ const Antd: React.FC = () => {
     <div>
 
       <Button type="primary" className="animate-bounce duration-150">按钮</Button>
-
     </div>
   )
 }
