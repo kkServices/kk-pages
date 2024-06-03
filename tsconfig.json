@@ -1,14 +1,25 @@
 {
   "compilerOptions": {
     "incremental": true,
+    "target": "ES2017",
     "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["./src/*"],
-      "@data/*": ["./data/*"],
-      "@shadcn/*": ["./src/components/ui/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@data/*": [
+        "./data/*"
+      ],
+      "@shadcn/*": [
+        "./src/components/ui/*"
+      ]
     },
     "resolveJsonModule": true,
     "types": [],
@@ -24,6 +35,15 @@
       }
     ]
   },
-  "include": ["types/*", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "tailwind.config.js", "postcss.config.cjs"],
-  "exclude": ["node_modules"]
+  "include": [
+    "types/*",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "tailwind.config.js",
+    "postcss.config.cjs"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
