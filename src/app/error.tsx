@@ -6,7 +6,6 @@ import React, { startTransition, useEffect, useState } from 'react'
 
 import { useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { logger } from '@/lib/logger'
 
 interface ErrorProps {
   error: Error & { digest?: string }
@@ -68,7 +67,6 @@ export default function Error({ error, reset }: ErrorProps) {
       reset()
     })
   }
-  logger.error(`页面发生错误（${error.digest}）`, { ...error })
   return (
     <div className={cn('flex h-screen w-full items-center justify-center transition-transform duration-500', containerMedia)}>
       <div className="w-[400px] p-[40px] text-center">
