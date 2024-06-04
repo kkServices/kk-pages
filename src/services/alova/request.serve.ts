@@ -106,7 +106,7 @@ export class RequestServer {
 const requestServer = new WarpAlova({
   localCache: null,
   requestAdapter: GlobalFetch(),
-  baseURL: 'http://127.0.0.1:3000/api',
+  baseURL: 'http://localhost:3000/api',
   beforeRequest: (method) => {
     if (!method.config.cache && !method.config.next) {
       method.config.cache = 'no-cache'
@@ -147,12 +147,10 @@ const requestServer = new WarpAlova({
       method.meta._endTime = Date.now()
       method.meta._duration = method.meta._endTime - method.meta._startTime
 
-      logger.info('服务端请求发送成功！', { request: method, response: data })
-
       if (!meta.isTransformResponse)
         return data
 
-      if (response.status >= 400 && !data.success) {
+      if (response.status >= 400 || !data.success) {
         logger.warn('服务端请求发送成功,但业务状态码失败！', { request: method, response: data })
         return Promise.reject(new BusinessException(data))
       }
