@@ -1,5 +1,8 @@
 @layer components {
   .card {
-    @apply rounded-xl bg-white shadow transition duration-300 hover:shadow-xl;
+    @apply rounded-xl bg-base-300 shadow transition duration-300 hover:shadow-xl;
+  }
+  .navbar-bg {
+    @apply bg-[var(--glass-bg-op)] navbar transform-gpu [-webkit-backdrop-filter:saturate(180%)_blur(20px)] [backdrop-filter:saturate(180%)_blur(20px)] [backface-visibility:hidden] [border-bottom:1px_solid_rgb(187_187_187_/_20%)];
   }
 }
