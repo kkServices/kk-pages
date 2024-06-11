@@ -1,6 +1,8 @@
 import { serverApi } from '@/services/kkservice/api.server'
 import QrCode from '@/app/(company)/jxk/doorlock/components/QrCode'
 
+export const dynamic = 'force-dynamic'
+
 export default async function page() {
   const result = await serverApi.getJxkDoorLock()
   return (

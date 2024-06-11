@@ -1,6 +1,6 @@
 export class BusinessException extends Error {
-  readonly response: MockService.ErrorRes
-  constructor(options: MockService.ErrorRes) {
+  readonly response: KkService.ErrorRes
+  constructor(options: KkService.ErrorRes) {
     super(`${options.code}:${options.message}`)
     this.name = `RequestError`
     this.response = options

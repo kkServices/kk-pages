@@ -3,8 +3,7 @@ import type { Config } from 'tailwindcss'
 import tailwindcssAnimate from 'tailwindcss-animate'
 import daisyui from 'daisyui'
 import daisyuiThemes from 'daisyui/src/theming/themes'
-// eslint-disable-next-line ts/ban-ts-comment
-// @ts-expect-error
+
 import { accentColor, accentColorDark, errorColor, errorColorDark, infoColor, infoColorDark, neutralColor, neutralColorDark, primaryColor, primaryColorDark, secondaryColor, secondaryColorDark, successColor, successColorDark, warningColor, warningColorDark } from './src/lib/color'
 
 const config: Config = {
